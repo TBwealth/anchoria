@@ -1,0 +1,23 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+  
+  .overflow-y-auto::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      cursor: pointer;
+      color: rgb(232, 232, 232);
+    }
+      
+      /* Track */
+    .overflow-y-auto::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+       
+    /* Handle */
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: rgb(232, 232, 232); 
+    }
+    
+    /* Handle on hover */
+    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    }

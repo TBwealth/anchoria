@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            transparent: "transparent",
+            current: "currentColor",
+            primary: "#E2A843",
+            clifford: '#da373d',
+            secondary: "#EDCA8B",
+          }
+        }
+      }
+    }
+  </script>
+  <link href="./assets/css/styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body class="bg-[#0D0D0D]">
+    <div class="relative flex ">
+        <!--Side Bar-->
+        <div class="w-64  py-3.5 absolute  transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+            <div class="flex flex-col justify-between h-full ">
+                <div class="">
+                  <!-- logo -->
+                  <a href="/" class="px-10 flex items-center">
+                    <img alt="" class="w-28 h-28" src="./assets/images/logo_White.svg">           
+                  </a>
+                 
+                  <!-- nav -->
+                  <nav class="py-10 h-full min-h-[60vh] pl-4 font-thin text-sm">
+                    <!-- BASIC LINK -->
+                    <span>
+                        <a href="/dashboard.html"
+                          class="block py-2.5 px-4 my-2 flex items-center space-x-2 side-menu text-[#A4A4A4]">
+                          <img src="./assets/icons/Dashboard.svg" class="w-5 h-5">
+                          <span>Dashboard</span>
+                        </a>
+                      </span>
+                    <div class="flex flex-col">
+                        <div class="bg-[#F1F2F7]">
+                            <div class=" bg-[#0D0D0D] p-3 rounded-br-[5rem]"></div>
+                        </div>                        
+                            <div class="bg-[#F1F2F7] rounded-l-full">
+                                <a href="/mywallet.html"
+                                  class="block py-4 px-4 flex items-center space-x-2 side-menu text-[#EDCA8B] font-medium">
+                                  <img src="./assets/icons/Wallet_pry.svg" class="w-5 h-5">
+                                  <span>My Wallet</span>
+                                </a>
+                              </div>
+                              <div class="bg-[#F1F2F7]">
+                                <div class=" bg-[#0D0D0D] p-3 rounded-tr-[5rem]"></div>
+                            </div> 
+                    </div>
+              
+                    
+                    
+                   
+                      <span>
+                        <a href="/invest.html"
+                          class="block py-2.5 px-4 my-2 flex items-center space-x-2 side-menu text-[#A4A4A4]">
+                          <img src="./assets/icons/Invest.svg" class="w-5 h-5">
+                          <span>Invest</span>
+                        </a>
+                      </span>
+                      <span>
+                        <a href="/dashboard"
+                          class="block py-2.5 px-4 my-2 flex items-center space-x-2 side-menu text-[#A4A4A4]">
+                          <img src="./assets/icons/KYC.svg" class="w-5 h-5">
+                          <span>KYC Update</span>
+                        </a>
+                      </span>
+                      <span>
+                        <a href="/dashboard"
+                          class="block py-2.5 px-4 my-2 flex items-center space-x-2 side-menu text-[#A4A4A4]">
+                          <img src="./assets/icons/Settings.svg" class="w-5 h-5">
+                          <span>Settings</span>
+                        </a>
+                      </span>
+                      <span>
+                        <a href="/dashboard"
+                          class="block py-2.5 px-4 my-2 flex items-center space-x-2 side-menu text-[#A4A4A4]">
+                          <img src="./assets/icons/Help.svg" class="w-5 h-5">
+                          <span>Help</span>
+                        </a>
+                      </span>
+                  </nav>
+        </div>
+          <!-- logout-->
+   <div class="text-primary mb-10 pl-4">
+    <a class="flex py-2.5 px-4 items-center space-x-3 cursor-pointer">
+        <img src="./assets/icons/logout.svg" class="w-5 h-5">
+      <span>Logout</span>
+      
+    </a>
+    
+</div>
+
+        </div>
+        </div>
+        <!--Main Panel-->
+        <main class="flex-1 h-screen bg-[#F1F2F7] rounded-l-3xl">
+             <!-- end of header  -->
+        <div class="h-screen overflow-y-auto">
+            <section class="w-full">
+                <div class="relative flex ">
+                    <!--Content Panel-->
+                    <div class="flex-1">
+                        <div class="py-10 flex flex-col space-y-8 px-10">
+                            <div class="flex justify-between">
+                                <div class="flex flex-col">
+                                    <div><span class="font-bold text-xl text-primary">My Wallet</span></div>
+                                    <div class="text-xs text-[#A4A4A4]">Thursday, 13 October 2022</div>
+                                </div>
+                                <div class="w-[20vw] flex items-center">
+                                    
+<form class="w-full">
+    <div class="flex w-full">
+           <div class="relative w-full">
+            <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm rounded-full border border-gray-300 focus:ring-blue-500 focus:border-primary" placeholder="" required>
+            <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-none rounded-r-full border hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary">
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span class="sr-only">Search</span>
+            </button>
+        </div>
+    </div>
+</form>
+
+                                </div>
+                            </div>
+                       <div class="h-[75vh] overflow-y-auto pb-10">
+                        <div >
+                          
+                            <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
+                                <div class="rounded-lg p-10 flex flex-col justify-between bg-[#A91D4C]">
+                                    <div class="flex justify-between">
+                                        <div class="flex flex-row space-x-1">
+                                            <img alt="" class="w-6 h-6" src="./assets/icons/balance.svg">   
+                                            <div class="flex items-center text-[#F17046]">Balance</div>
+                                        </div>
+                                         
+                                        <img alt="" class="w-6 h-6" src="./assets/icons/More.svg">    
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="text-white font-black mt-3">N 55,345,542</div>
+                                        <div class="text-xs text-[#F17046]">Updated every 15 minutes</div>
+                                    </div>
+                                 
+                                </div>
+
+                                <div class="md:col-span-2 rounded-lg p-5 bg-white">
+                                    <div class="grid md:grid-cols-2 grid-cols-1">
+                                        <div class="flex flex-col pl-5 justify-between">
+                                            <div class="flex flex-row">
+                                                <img src="./assets/icons/walletIcon.svg" alt="Transaction Wallet">
+                                                <div class="flex flex-col mr-2">
+                                                    <span class="text-[#8392AB] text-xs">Transactions</span>
+                                                    <span class="text-medium">115</span>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="flex flex-col text-xs ml-2">
+                                                <div class="flex flex-row ">
+                                                    <i class="fa fa-circle text-[#EDCA8B] mr-2"></i>
+                                                    <span class="mr-1 text-medium flex items-center">Income</span>
+                                                </div>
+                                                <div class="flex flex-row">
+                                                    <i class="fa fa-circle text-[#A91D4C] mr-2"></i>
+                                                    <span class="mr-1 text-medium flex items-center">Expenses</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        <!-- Prepare a DOM with a defined width and height for ECharts -->
+                                        <div id="piemain" style="width: 20vw;height:150px;"></div>
+                                        </div>
+
+
+                                    </div>
+                                                       
+
+                                </div>                                 
+
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                              <!-- Prepare a DOM with a defined width and height for ECharts -->
+<div id="main" style="width: 60vw;height:400px;"></div>
+<script type="text/javascript">
+// Initialize the echarts instance based on the prepared dom
+var myChart = echarts.init(document.getElementById('main'));
+
+// Specify the configuration items and data for the chart
+option = {
+title: {
+text: 'Transaction History'
+},
+tooltip: {
+trigger: 'axis',
+axisPointer: {
+  type: 'cross',
+  label: {
+    backgroundColor: '#E2A843'
+  }
+},
+backgroundColor: '#E2A843',
+textStyle:{
+  color:"#fff"
+}
+},
+legend: {
+data: []
+},
+toolbox: {
+feature: {
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: [
+{
+  type: 'category',
+  boundaryGap: false,
+  data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+}
+],
+yAxis: [
+{
+  type: 'value'
+}
+],
+series: [
+{
+  name: 'Transaction',
+  type: 'line',
+  stack: 'Total',
+  smooth: true,
+   itemStyle: {
+    color: '#E2A843'
+  },
+  lineStyle:{
+    color: 'rgb(226, 168, 67,1)',
+  },
+  areaStyle: {
+    opacity: 0.5,
+    color:new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+      {
+        offset: 0,
+        color: 'rgb(226, 168, 67,1)'
+      },
+      {
+        offset: 1,
+        color: 'rgb(255, 255, 255,0)'
+      }
+    ])
+  },
+  emphasis: {
+    focus: 'series'
+  },
+  data: [220000, 100000, 141000, 204000, 200000, 33000, 140000, 100000, 20000, 50000,50000,50000]
+}
+]
+};
+// Initialize the echarts instance based on the prepared dom
+var myPieChart = echarts.init(document.getElementById('piemain'));
+
+// Specify the configuration items and data for the chart
+pieoption = {
+tooltip: {
+trigger: 'item'
+},
+legend: {
+top: '5%',
+left: 'bottom'
+},
+series: [
+{
+  name: 'Transactions',
+  type: 'pie',
+  radius: ['60%', '80%'],
+  avoidLabelOverlap: false,
+  label: {
+    show: false,
+    position: 'center'
+  },
+  emphasis: {
+    label: {
+      show: true,
+      fontSize: 40,
+      fontWeight: 'bold'
+    }
+  },
+  labelLine: {
+    show: false
+  },
+  color:["#EDCA8B","#A91D4C"],
+  data: [
+    { value: 1048, name: 'Expense' },
+    { value: 2000, name: 'Income' },
+  ]
+}
+]
+};
+// Display the chart using the configuration items and data just specified.
+myPieChart.setOption(pieoption);
+// Display the chart using the configuration items and data just specified.
+myChart.setOption(option);
+</script>
+                       </div>
+
+                            </div>
+                        </div>
+                    </div>
+                     <!--End Content Panel-->
+<!--News Panel-->
+<div class="w-72 h-screen py-14 border-l border-l-black p-6 absolute bg-[#EDCA8B] transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+<div class="flex flex-col space-y-10">
+<!--User Profile-->
+<div class="flex flex-row space-x-3">
+    <div class="rounded bg-white w-10 h-10 flex items-center justify-center">
+        <div class="relative">
+            <i class="fa fa-bell-o"> </i>
+            <span class="top-0 left-2 absolute  w-2.5 h-2.5 bg-red-400 border-2 border-white rounded-full"></span>
+        </div>
+    </div>
+    <div >
+        
+        <div class="h-10 rounded bg-white flex items-center justify-center p-4 flex-row space-x-2">
+            <img class="w-8 h-8 rounded-full" src="./assets/images/cynthia.svg" alt="Rounded avatar">
+            <span class="text-xs">Cynthia Anchoria</span>
+            <i class="fa fa-angle-down cursor-pointer" id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start"> </i>
+        <!-- Dropdown menu -->
+    <div id="userDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+        <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
+          <div>Cynthia Anchoria</div>
+          <div class="font-medium truncate">cynthia@anchoria.com</div>
+        </div>
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+          <li>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+          </li>
+        </ul>
+        <div class="py-1">
+          <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+            Logout
+        </a>
+        </div>
+    </div>
+        </div>
+        
+    
+    </div>
+    </div>
+<!--End User Profile-->
+        <!--News and Update-->
+        <div class="flex flex-col space-y-3">
+            <div class="flex justify-between mb-3">
+                <span class="font-bold">News & Updates</span>
+                <span class="text-thin text-xs flex items-center cursor-pointer">show all</span>
+            </div>
+            <div class="rounded-lg bg-[#F9EDD7] p-4 flex flex-col">
+                <span class="text-[#F17046] font-medium">Sed ut perspiciatis</span>
+                <span class="text-xs font-medium">Thursday, 13 October 2022</span>
+                <span class="text-[#A4A4A4] text-xs mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                </span>
+            </div>
+            <div class="rounded-lg bg-[#F9EDD7] p-4 flex flex-col">
+                <span class="text-[#F17046] font-medium">Veritatis et quasi architecto</span>
+                <span class="text-xs font-medium">Thursday, 13 October 2022</span>
+                <span class="text-[#A4A4A4] text-xs mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                </span>
+            </div>
+            <div class="rounded-lg bg-[#F9EDD7] p-4 flex flex-col">
+                <span class="text-[#F17046] font-medium">Accusantium doloremque </span>
+                <span class="text-xs font-medium">Thursday, 13 October 2022</span>
+                <span class="text-[#A4A4A4] text-xs mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                </span>
+            </div>
+        </div>
+   
+        <!--End News and Update-->
+</div>
+
+</div>
+
+                </div>
+            </section>  
+        </div>
+            </main>
+<!--End Main Panel-->
+    </div>
+
+
+
+  <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+</body>
+</html>

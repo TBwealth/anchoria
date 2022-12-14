@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            transparent: "transparent",
+            current: "currentColor",
+            primary: "#E2A843",
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
+  <link href="./assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-[#F9EDD7]">
+<div class="overflow-y-auto h-[95vh]">
+  <nav class="bg-transparent border-gray-200 px-2 md:px-4 py-2.5 dark:bg-transparent mt-5">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <a href="https://flowbite.com" class="flex flex-1 items-center">
+            <img src="./assets/images/logo_Black.svg" class="mr-3 h-10 sm:h-9" alt="Anchoria Logo" />        
+        </a>
+        <div class="flex items-center md:order-2">
+               <button data-collapse-toggle="mega-menu" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mega-menu" class="hidden justify-between items-center w-full text-xs md:flex md:w-auto md:order-1">
+            <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-2 md:mt-0">
+                <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-black hover:text-[#E2A843]" aria-current="page">HOME</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-black hover:text-[#E2A843]">ABOUT</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-black hover:text-[#E2A843]">SIGN IN</a>
+                </li>
+                <li>
+                  <a href="#" class="block py-2 pr-4 pl-3 text-black hover:text-[#E2A843]">REGISTER</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 pr-4 pl-3 text-black hover:text-[#E2A843]">CONTACT</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="grid md:grid-cols-3 grid-cols-1">
+  <div class="col-span-2">
+    <div>
+      <img src="./assets/images/home_page_tracker.svg" class="w-full md:h-[90vh]" alt="Track your investment" />  
+    </div>
+  </div>
+  <div class="w-full h-full md:p-24 p-5">
+  
+<div class="flex items-center h-full w-full">
+  <form class="w-full">
+    <div class="mb-6 w-full">
+      <input type="email" id="email" class="bg-gray-50 border-none text-sm rounded-lg block w-full p-2.5 shadow-md focus:ring-primary focus:border-primary placeholder-sm" placeholder="ACCOUNT ID" required>
+    </div>
+    <div class="mb-6 w-full">     
+      <div class="flex flex-row bg-gray-50 pr-2 ml-1 rounded-lg shadow-md">        
+        <input type="password" id="email-address-icon" class="bg-gray-50 border-none text-sm rounded-lg block w-full p-2.5 focus:ring-0 placeholder-sm" placeholder="PASSWORD">
+        <div class="flex inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <i class="fa fa-eye-slash text-gray-400"></i>
+        </div>
+      </div>  
+      
+    </div>
+    <button onclick="window.location='/dashboard.html'" type="submit" class="text-white bg-black hover:bg-primary font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Login</button>
+   <div class="flex mb-6 mt-4 justify-between">
+    <div class="flex">
+      <div class="flex items-center h-5">
+        <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded focus:ring-3 focus:ring-primary" required>
+      </div>
+      <label for="remember" class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-500">Remember me</label>
+    </div>
+    <div class="text-blue-500 font-medium text-xs cusor-pointer">
+      Forgot Password?
+    </div>
+   </div>
+   <div class="font-medium text-xs w-full">
+    Don't have an account? <span class="text-blue-500 font-medium cusor-pointer">Sign Up Here</span>
+  </div>
+    
+  </form>
+</div>
+ 
+    
+  </div>
+
+</div>
+</div>
+
+
+  <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+</body>
+</html>
